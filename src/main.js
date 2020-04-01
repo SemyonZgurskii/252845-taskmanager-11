@@ -1,3 +1,5 @@
+"use strict";
+
 const createSiteMenuTemplate = () => {
   return (
     `<section class="control__btn-wrap">
@@ -30,3 +32,12 @@ const createSiteMenuTemplate = () => {
   </section>`
   )
 }
+
+const render = (container, template, place) => {
+  container.insertAdjacentHTML(place, template);
+}
+
+const siteMainElement = document.querySelector('.main');
+const siteHeaderElement = siteMainElement.querySelector('.main__control');
+
+render(siteHeaderElement, createSiteMenuTemplate(), `beforeend`);
